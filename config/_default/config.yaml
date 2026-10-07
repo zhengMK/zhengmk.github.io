@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Mingkai Zheng's Homepage # Website name
-baseurl: 'https://zhengmk.github.io' # Website URL
+baseurl: 'https://zhengmk.github.io/starter-academic/' # Website URL (project site; the repo is not named zhengMK.github.io)
 copyright: '' # Footer text, e.g. '© {year} Me'
 
 ############################

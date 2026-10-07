@@ -1,0 +1,72 @@
+# Builds the Hugo (Wowchemy) site and publishes it to GitHub Pages.
+#
+# Why this exists: GitHub Pages cannot build Hugo sites on its own. Without
+# this workflow it just served the raw repository files (via Jekyll), so no
+# content edits ever appeared on the live site.
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Hugo needs Go to download the Wowchemy theme modules listed in go.mod.
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.17'
+          cache: false
+
+      # Pinned to the version in netlify.toml. The Wowchemy module version in
+      # go.mod (June 2021) does not build with newer Hugo releases.
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.83.1'
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # base_url comes from the Pages settings, so this keeps working if the
+      # repo is ever renamed to zhengMK.github.io.
+      - name: Build with Hugo
+        env:
+          HUGO_ENV: production
+          HUGO_ENVIRONMENT: production
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
