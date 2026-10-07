@@ -14,7 +14,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  actions: read # to check on GitHub's own "pages build and deployment" run
 
 concurrency:
   group: pages
@@ -68,29 +67,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # While the Pages source in the repo settings is still "Deploy from a
-      # branch", GitHub also runs its own "pages build and deployment" (Jekyll)
-      # on every push, and whichever deployment finishes last is the one
-      # served. Wait for that run so the Hugo output always wins. Once the
-      # Pages source is switched to "GitHub Actions" that run no longer
-      # exists and this step finishes immediately.
-      - name: Wait for GitHub's legacy branch build (if any)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          for i in $(seq 1 40); do
-            pending=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=50" \
-              --jq '[.workflow_runs[] | select(.name == "pages build and deployment" and .status != "completed")] | length')
-            if [ "$pending" = "0" ]; then
-              echo "No legacy branch build pending."
-              sleep 15
-              exit 0
-            fi
-            echo "Legacy branch build still running; waiting... ($i)"
-            sleep 10
-          done
-          echo "Timed out waiting for the legacy branch build; deploying anyway."
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
