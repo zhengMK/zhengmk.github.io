@@ -48,6 +48,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/mingkai-zheng-69224312b/
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=yvLHzPoAAAAJ&hl=en
 - display:
     header: false
   label: cv
