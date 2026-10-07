@@ -6,12 +6,12 @@ title: Mingkai Zheng
 superuser: true
 
 # Role/position/tagline
-role: Research Engineering/Scientist Associate III at TACC
+role: PhD student 
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Texas Advanced Computing Center
-    url: https://www.cornell.edu/
+  - name: Department of ECE @ Rutgers 
+    # url: https://www.cornell.edu/
 
 # Short bio (displayed in user profile at end of posts)
 bio: 
@@ -19,11 +19,15 @@ bio:
 # Interests to show in About widget
 interests:
   - High Performance Computing (HPC)
+  - Large Language Model (LLM)
   - Deep Learning (DL)
 
 # Education to show in About widget
 education:
   courses:
+    - course: Ph.D. in Electrical and Computer Engineering
+      institution: Rutgers University
+      year: 2024
     - course: M.Eng. in Electrical and Computer Engineering
       institution: Cornell University
       year: 2022
@@ -72,6 +76,6 @@ email: ''
 highlight_name: true
 ---
 
-Hi, there! I am Mingkai Zheng. I am a member of [the learning (scalable computing intelligence) group](https://learning-tacc.github.io/) in the Data Intensive Computing Group at Texas Advanced Computing Center (TACC). Most of my works are related to HPC and DL. 
+Hi, there! I am Mingkai Zheng, a PhD student from Rutgers University, NJ. I am fortunate to receive supervision from [Prof. Zhao Zhang](https://zhaozhang.github.io/). Most of my research works focus on improving the training efficiency of large language models (LLMs). 
 
-Before joining TACC, I received my Master of Engineering degree from the Department of Electrical and Computer Engineering at [Cornell University](https://www.cornell.edu/) and my Bachelor of Engineering degree from University of Liverpool.
+Before that, I was a research engineer at Texas Advanced Computing Center (TACC). I received my Master of Engineering degree from the Department of Electrical and Computer Engineering at [Cornell University](https://www.cornell.edu/) and my Bachelor of Engineering degree from University of Liverpool.
