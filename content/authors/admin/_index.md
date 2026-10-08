@@ -27,16 +27,16 @@ education:
   courses:
     - course: Ph.D. in Electrical and Computer Engineering
       institution: Rutgers University
-      year: 2024
+      year: '2024 - 2027 (expected)'
     - course: M.Eng. in Electrical and Computer Engineering
       institution: Cornell University
-      year: 2022
+      year: '2021 - 2022'
     - course: B.Eng. in Electrical Engineering
       institution: University of Liverpool
-      year: 2020
+      year: '2016 - 2020'
     - course: B.Eng. in Electrical Engineering
       institution: Xi'an Jiaotong-Liverpool University
-      year: 2020
+      year: '2016 - 2020'
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
