@@ -1,0 +1,22 @@
+{{/* Site-level JS, included by the theme at the end of the page. */}}
+<script>
+  // The Projects showcase is positioned by Isotope from heights measured once at
+  // load time. Re-run the layout whenever an image or web font finishes loading
+  // later, so card positions always match their final heights (no overlap).
+  (function () {
+    function relayoutProjects() {
+      if (!window.Isotope) return;
+      document.querySelectorAll('.projects-container').forEach(function (el) {
+        var iso = Isotope.data(el);
+        if (iso) iso.layout();
+      });
+    }
+    document.querySelectorAll('.projects-container img').forEach(function (img) {
+      img.addEventListener('load', relayoutProjects);
+    });
+    window.addEventListener('load', relayoutProjects);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(relayoutProjects);
+    }
+  })();
+</script>
