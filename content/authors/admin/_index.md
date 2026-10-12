@@ -78,4 +78,4 @@ highlight_name: true
 
 Hi, there! I am Mingkai Zheng, a PhD student from Rutgers University, NJ. I am fortunate to receive supervision from [Prof. Zhao Zhang](https://zhaozhang.github.io/). Most of my research works focus on improving the training efficiency of large language models (LLMs). 
 
-Before that, I was a research engineer at Texas Advanced Computing Center (TACC). I received my Master of Engineering degree from the Department of Electrical and Computer Engineering at [Cornell University](https://www.cornell.edu/) and my Bachelor of Engineering degree from University of Liverpool.
+Before that, I was a research engineer at Texas Advanced Computing Center (TACC). I received my Master of Engineering degree from the Department of Electrical and Computer Engineering at [Cornell University](https://www.cornell.edu/) and my Bachelor of Engineering degree from University of Liverpool and Xi'an Jiaotong-Liverpool University.
