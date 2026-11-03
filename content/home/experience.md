@@ -36,13 +36,6 @@ experience:
     location: Austin, TX
     date_start: '2023-01-01'
     date_end: '2024-01-01'
-  - title: Software Development Engineer Intern
-    company: Biren Technology
-    company_url: 'https://www.birentech.com/'
-    company_logo: biren
-    location: Shanghai, China
-    date_start: '2020-12-01'
-    date_end: '2021-04-01'
 #    description: 
 #  - title: CEO
 #    company: GenCoin
